@@ -8,23 +8,371 @@
     <artifactId>RedisTest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!-- spring version info -->
+        <spring.version>4.2.5.RELEASE</spring.version>
+        <!-- mybatis version info -->
+        <mybatis.version>3.4.0</mybatis.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <jackson.version>1.9.3</jackson.version>
+        <jackson.databind.version>2.5.0</jackson.databind.version>
+        <jackson.core.version>2.5.0</jackson.core.version>
+        <jstl.version>1.2</jstl.version>
+        <servlet.api.version>2.5</servlet.api.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
+        <mysql.connector.version>5.1.35</mysql.connector.version>
+        <mybatis.spring.version>1.3.0</mybatis.spring.version>
+        <fastjson.version>1.2.24</fastjson.version>
+        <freemarker.version>2.3.23</freemarker.version>
+        <!-- cas version (sso) -->
+        <cas.client.version>3.2.1</cas.client.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <commons.beanutils.version>1.8.3</commons.beanutils.version>
+        <commons.io.version>1.3.2</commons.io.version>
+        <commons.codec.version>1.4</commons.codec.version>
+        <commons.validator.version>1.4.0</commons.validator.version>
+        <commons.httpclient.version>3.0.1</commons.httpclient.version>
+        <reflections.version>0.9.10</reflections.version>
+        <guava.version>18.0</guava.version>
+        <quartz.version>2.2.1</quartz.version>
+        <junit.version>4.11</junit.version>
+        <!-- plugin version info -->
+        <mybatis.generator.version>1.3.2</mybatis.generator.version>
+        <maven.compiler.version>3.3</maven.compiler.version>
+        <maven.war.version>3.0.0</maven.war.version>
+        <tomcat.maven.version>2.2</tomcat.maven.version>
+        <maven.resource.plugin.version>3.0.2</maven.resource.plugin.version>
+        <!-- mybatis page plugin version -->
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <!-- active mq version -->
+        <activemq.client.version>5.13.0</activemq.client.version>
+        <!-- java mail version -->
+        <java.mail.version>1.5.2</java.mail.version>
+        <!-- redis client version -->
+        <redis.client.version>2.8.1</redis.client.version>
+        <!-- commons pool version -->
+        <commons.pool.version>2.4.2</commons.pool.version>
+        <!-- ehcache version -->
+        <ehcache.version>2.10.4</ehcache.version>
+        <!-- jigsaw sdk-->
+        <jigsaw.sdk.version>1.3.5</jigsaw.sdk.version>
+        <!-- stateless4j -->
+        <stateless4j.version>2.5.0</stateless4j.version>
+        <!-- json-lib -->
+        <json.lib.version>2.4</json.lib.version>
+
+    </properties>
+
     <dependencies>
+        <!-- spring core begin -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- spring core end -->
+
+        <!-- jsp begin -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!-- jsp end -->
+
+        <!-- database begin -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis.spring.version}</version>
+        </dependency>
+        <!-- database end -->
+
+        <!-- log begin -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- log end -->
+
+        <!-- freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+        </dependency>
+        <!-- freemarker end -->
+
+        <!-- sso cas begin -->
+        <dependency>
+            <groupId>org.jasig.cas.client</groupId>
+            <artifactId>cas-client-core</artifactId>
+            <version>${cas.client.version}</version>
+        </dependency>
+        <!-- sso cas end -->
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons.lang.version}</version>
+        </dependency>
+
+        <!-- json-lib -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>${json.lib.version}</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+
+        <!-- fastjson begin -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!-- fastjson end -->
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons.beanutils.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${commons.validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>${commons.httpclient.version}</version>
+        </dependency>
+
+        <!-- json begin -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <!-- json end -->
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>${reflections.version}</version>
+        </dependency>
+
+        <!-- google guava begin -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <!-- google guava end -->
+
+        <!-- mybatis page util plugin -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+
+        <!-- active mq -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>${activemq.client.version}</version>
+        </dependency>
+
+        <!-- quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+
+        <!-- java mail -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>${java.mail.version}</version>
+        </dependency>
+
+        <!--redis client-->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.7.2</version>
+            <version>${redis.client.version}</version>
+        </dependency>
+
+        <!--commons pool-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons.pool.version}</version>
+        </dependency>
+
+        <!--ehcache-->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
+
+
+        <!-- stateless4j -->
+        <dependency>
+            <groupId>com.github.oxo42</groupId>
+            <artifactId>stateless4j</artifactId>
+            <version>${stateless4j.version}</version>
+        </dependency>
+
+        <!-- test begin -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <!-- setting this jar is just for dev -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- test end -->
+        <dependency>
+            <groupId>com.baidubce</groupId>
+            <artifactId>bce-java-sdk</artifactId>
+            <version>0.10.26</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.4</version>
         </dependency>
 
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.6.Final</version>
         </dependency>
     </dependencies>
 
